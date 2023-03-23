@@ -1,21 +1,35 @@
 //Creo un array con tutte le mail valide 
-const mailValide = ['marco','francesco','umberto','andrea']
+const mailValide = [
+  'marco@gmail.com',
+  'francesco@gmail.com',
+  'umberto@gmail.com',
+  'andrea@gmail.com'
+]
 
 
 //tramite un prompt richiedo la mail all'utente
-let mailUtente = prompt("inserisci quio la tua mail", 'marco')
-console.log('mail dell\' utente -->',mailUtente)
+let mailUtente = prompt("inserisci quio la tua mail")
+console.log('mail utente -->',mailUtente)
 
 
-for (i = 0 ; i < mailValide.length ; i++){
-// console.log('Lista delle mail valide -->',mailValide[i]);
+// //Creo la condizione 
+//   if(mailValide.includes(mailUtente)){
+//     console.log("Accesso Consentito")
+//   }else {
+//     console.warn('Accesso Negato')
+//   }
 
+ //Creo la condizione con il ciclo 
+let mailPresenteNellaLista = false;
 
-//Creo la condizione 
-  if(!(mailUtente == mailValide[i])){
-    console.log("Accesso negato")
-  }else {
-    console.log('Accesso consentito')
-  }
+for ( i = 0; i < mailValide.length; i++) {
+if(mailUtente === mailValide[i]){
+  mailPresenteNellaLista = true
+}
+}
 
+if(mailPresenteNellaLista === true){
+  console.log("accesso consentito")
+}else {
+  console.warn('accesso negato')
 }
